@@ -81,4 +81,5 @@ Navigation Filters
 4. Research -> `/research`
 5. Activity Happing at UMD -> `/event`
 6. On/off campus Job Post/Review -> `/career`
-7. CHat with Random Student -> `/chat`
+7. Chat with Random Student -> `/chat`
+8. About Us -> `/aboutUs`
