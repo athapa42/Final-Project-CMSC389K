@@ -77,7 +77,8 @@ Search Field: `name`
 Navigation Filters
 1. To Add new Post-> `/addPost`
 2. videos, articles and opinies about Sport -> `/sport`
-3. People asking about courses, -> `/acadamic`
+3. People asking about courses, -> `/academic`
 4. Research -> `/research`
 5. Activity Happing at UMD -> `/event`
 6. On/off campus Job Post/Review -> `/career`
+7. CHat with Random Student -> `/chat`

@@ -1,0 +1,21 @@
+{
+  "name": "Final-Project-CMSC389K",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athapa42/Final-Project-CMSC389K.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athapa42/Final-Project-CMSC389K/issues"
+  },
+  "homepage": "https://github.com/athapa42/Final-Project-CMSC389K#readme"
+}
