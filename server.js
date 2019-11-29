@@ -3,8 +3,13 @@ var app = express();
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
+var handlebars = exphbs.handlebars;
+
 // Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
 var dotenv = require('dotenv');
+var dataUtil = require("./post-util");
+var _DATA = dataUtil.loadData().posts;
+var len = _DATA.length
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
