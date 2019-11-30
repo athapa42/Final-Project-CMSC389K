@@ -17,6 +17,19 @@ app.use('/public', express.static('public'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+
+// Load envirorment variables
+dotenv.config();
+
+// Connect to MongoDB
+console.log(process.env.MONGODB)
+mongoose.connect(process.env.MONGODB);
+mongoose.connection.on('error', function() {
+    console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
+    process.exit(1);
+});
+
+
 var indexRouter = require('./routes/index');
 var aboutUsRouter = require('./routes/aboutUs');
 var academicRouter = require('./routes/academic');
@@ -26,22 +39,33 @@ var addPostRouter = require('./routes/addPost');
 var researchRouter = require('./routes/research');
 var eventRouter = require('./routes/event');
 var sportRouter = require('./routes/sport');
+var postController = require("./controllers/postController");
 
+app.get("/post/:category", (request, response, next) => {
+  let userCategory = request.params.category;
+  console.log(`This is the url ${request.url}`);
+  let optionObj = {
+    filterBy   : { category : userCategory },
+    renderName : userCategory
+  }
+postController.getPostList(request, response, optionObj);
+//next();
+})
 
 app.use('/', indexRouter);
 app.use('/aboutUs', aboutUsRouter);
-app.use('/academic', academicRouter);
-app.use('/career', careerRouter);
+app.use('/post/academic', academicRouter);
+app.use('/post/career', careerRouter);
 app.use('/chat', chatRouter);
 app.use('/addPost', addPostRouter);
-app.use('/research', researchRouter);
-app.use('/event', eventRouter);
-app.use('/sport', sportRouter);
+app.use('/post/research', researchRouter);
+app.use('/post/event', eventRouter);
+app.use('/post/sport', sportRouter);
 
 
 
 app.get('*', function(req, res){
-    res.render("404",{});
+    res.render("404",{url: req.url});
   });
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!');

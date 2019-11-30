@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
-//var dataUtil = require("./post-util");
+var postController = require('../controllers/postController');
+//var dataUtil = require("../post-util");
 //var _DATA = dataUtil.loadData().posts;
 //var len = _DATA.length
 
@@ -8,13 +9,9 @@ router.get('/', function(req, res, next) {
   res.render('addPost');
 });
 
-router.post('/', function(req, res) {
-   var body = req.body;
-     // Save new blog post
-   _DATA.push(req.body);
-   dataUtil.saveData(_DATA);
-   res.redirect("/")
-});
+router.post('/', postController.createPost);
+
+
 
 module.exports = router;
 
@@ -26,3 +23,10 @@ module.exports = router;
 //   .post((req, res) => {
 //     res.render('addPost', {pokemons: pokemons});
 //   });
+
+
+
+ //  var body = req.body;
+  //    // Save new blog post
+  //  _DATA.push(req.body);
+  //  dataUtil.saveData(_DATA);

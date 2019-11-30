@@ -3,11 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/public/css/main.css">
-  <title>Final Project</title>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  {{!-- <link rel="stylesheet" type="text/css" href="/public/css/main.css"> --}}
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>Final Project</title>
+
+
+
 </head>
 
 {{>nav}}
@@ -17,14 +22,37 @@
 
   <h1>This is from main.handleBars</h1>
   {{{body}}}
- 
 
-  
-  <script>
-   /* $('#createNew').on('click', function () {
-      alert("hi");
-    }); */
-  </script>
+
+
 </body>
+  <script>
+    // This will take care for searching post by title. 
+    // I am not done wiht it, yet
+  
+  /*  let searchByTitleObj= document.getElementById("searchByTitle");
+    searchByTitleObj.addEventListner("keyup", searchByTitle(this));
+
+    function searchByTitle(inputText) {
+      console.log("inputText: " + inputText);
+      // Declare variables
+      var input, filter, a, i
+      input = inputText;
+      console.log("input: " + input);
+      filter = input.value.toUpperCase();
+      console.log("filter: " + filter);
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < players.players.length; i++) {
+        a = players.players[i].name
+        if (a.toUpperCase().indexOf(filter) > -1) {
+          a.style.display = "";
+        } else {
+          a.style.display = "none";
+        }
+      }
+    }
+    */
+  </script>
+
 
 </html>

@@ -1,1 +1,18 @@
-[]
+<h1>Testing: From renderSinglePost.handlebars</h1>
+{{#each data}}
+{{!-- Single Post --}}
+    <div>
+         <p>{{this.timeStamp}}</p>
+        <h1>{{this.title}}</h1>
+        <p>{{this.description}}</p>
+    </div>
+        <h1>Comment: </h1>
+        {{!-- Comments For a Post --}}
+       {{#each this.comments}}
+            <div>
+               <p>Posted by: {{this.userName}}, {{this.timeStamp}}</p>
+            </div>
+       {{/each}}
+
+<hr><br>
+{{/each}}

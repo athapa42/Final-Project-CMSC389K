@@ -1,1 +1,24 @@
-[]
+<h1>Testing: From renderListOfPost.handlebars</h1>
+<ul id="listOfPostId">
+    {{#each data}}
+    <li>
+        <p>{{this.title}}</p>
+        <a href="/post/{{this.category}}/{{this.id}}">
+            <div>
+                <p>Posted by: {{this.userName}}, __ ago </p>
+                <p>{{this.timeStamp}}</p>
+
+                <h1>{{this.title}}</h1>
+                <p>{{this.description}}</p>
+                <a href={{this.linkUrl}}></a>
+                <img src="{{this.imageUrl}}" alt="">
+                <p> This URL is just for testing: /post/{{this.category}}/{{this.id}}</p>
+                <p></p>
+                <pComments: {{this.comment.length}}></p>
+            </div>
+
+        </a>
+    </li>
+    <hr><br>
+    {{/each}}
+</ul>
