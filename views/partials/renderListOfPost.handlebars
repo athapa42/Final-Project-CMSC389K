@@ -1,47 +1,26 @@
-<h1>Testing: From renderListOfPost.handlebars</h1>
-<ul id="listOfPostId">
+<ul id="listOfPostId" class="list-group">
+
     {{#each data}}
-    <li>
-        <p>{{this.title}}</p>
-        {{!-- <a href="/post/{{this.category}}/{{this.id}}">
-            <div>
-                <p>Posted by: {{this.userName}}, __ ago </p>
-                <p>{{this.timeStamp}}</p>
-
-                <h1>{{this.title}}</h1>
-                <p>{{this.description}}</p>
-                <a href={{this.linkUrl}}></a>
-                <img src="{{this.imageUrl}}" alt="">
-                <p> This URL is just for testing: /post/{{this.category}}/{{this.id}}</p>
-                <p></p>
-                <p>Comments: {{this.comment.length}}></p>
-            </div>
-
-        </a> --}}
-        <a href="/post/{{this.category}}/{{this.id}}" title="Boxxxxxxxxxxxxxxxxxxxxxxx">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 bbb">
-                        <div class="card">
+    <li class="list-group-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <a href="/post/{{this.category}}/{{this.id}}" title="This A Post"
+                            class="list-group-item list-group-item-action">
                             <div class="card-body">
-                                <h5 class="card-title">{{this.title}}</h5>
-                                <p class="card-text">{{this.description}}</p>
-                                <a href={{this.linkUrl}}></a>
-                                <img src="{{this.imageUrl}}" alt="">
-                                <img src="https://picsum.photos/200/300" alt="Card One" class="card-img-top">
-                                <p> This URL is just for testing: /post/{{this.category}}/{{this.id}}</p>
-                                <p>Comments: {{this.comment.length}}</p>
-                                <a href="#" class="btn btn-primary">Read ...</a>
-                            </div>
+                                <h5 class="card-title">Title: {{this.title}}</h5>
+                                <p class="card-text">Description: {{this.description}}</p>
+                                <p class="card-text"> This URL is just for testing: /post/{{this.category}}/{{this.id}}</p>
 
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-
-
             </div>
-        </a>
+        </div>
     </li>
-    <hr><br>
+
+    <hr>
     {{/each}}
 </ul>

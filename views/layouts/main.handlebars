@@ -39,6 +39,24 @@
 
 
  <script>
+   $(document).ready(function(){
+     
+     $(".postCard").hover(
+       //trigger when mouse hover 
+      function(){
+        $(this).animate({
+          marginTop: "-=1%",
+        },200)
+      },
+      function(){
+         $(this).animate({
+          marginTop: "0%",
+        },200)
+      }
+     );
+
+     
+    });
     // This will take care for searching post by title. 
     // I am not done wiht it, yet
   

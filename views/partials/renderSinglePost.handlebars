@@ -1,18 +1,14 @@
 <h1>Testing: From renderSinglePost.handlebars</h1>
-{{#each data}}
-{{!-- Single Post --}}
-    <div>
-         <p>{{this.timeStamp}}</p>
-        <h1>{{this.title}}</h1>
-        <p>{{this.description}}</p>
-    </div>
-        <h1>Comment: </h1>
-        {{!-- Comments For a Post --}}
-       {{#each this.comments}}
-            <div>
-               <p>Posted by: {{this.userName}}, {{this.timeStamp}}</p>
-            </div>
-       {{/each}}
+<ul id="listOfPostId" class="list-group">
 
-<hr><br>
-{{/each}}
+
+    <h5 class="card-title">Title: {{data.title}}</h5>
+        <p class="card-text">Description: {{data.description}}</p>
+        <a href={{data.linkUrl}}>URL: {{data.linkUrl}}</a>
+        <img src="{{data.imageUrl}}" alt="">
+        <p> This URL is just for testing: /post/{{data.category}}?id={{data.id}}</p>
+        <p>Comments: {{data.reviews.length}}</p>
+        <a href="#" class="btn btn-primary">Read ...</a>
+
+
+</ul>

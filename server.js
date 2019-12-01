@@ -51,6 +51,17 @@ app.get("/post/:category", (request, response, next) => {
 postController.getPostList(request, response, optionObj);
 //next();
 })
+app.get("/post/:category/:id", (request, response, next) => {
+  // let userCategory = request.params.category;
+  // let _id = request.params.id;
+
+  console.log(`This is the url ${request.url}`);
+  let optionObj = {
+      renderName : "singlePostWithComments"
+  }
+postController.getSinglePost(request, response, optionObj);
+//next();
+})
 
 app.use('/', indexRouter);
 app.use('/aboutUs', aboutUsRouter);

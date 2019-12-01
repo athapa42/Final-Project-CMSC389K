@@ -3,6 +3,7 @@
 * will be used as callbacks to our endpoints under routes folder.
 */
 let Post = require('../module/post');
+let mongoose = require('mongoose');
 
 /*                  ******************* [ READ ] *******************                  */
 
@@ -22,13 +23,16 @@ function getPostList(req, res, optionObj) {
 };
 
 // Retrieve detail info for a specific post.
-function getSinglePost(req, res) {
-  let _id = req.params.id;
-  Post.find(_id)
+function getSinglePost(req, res, optionObj) {
+  let _id = mongoose.Types.ObjectId(req.params.id);
+  if(mongoose.Types.ObjectId.isValid(_id)) {
+    console.log(`${_id} is valid mongodb ID`);
+  }else {console.log(`ERROR ${_id} is Invalid mongodb ID`);}
+  Post.findById(_id)
                           .then(singlePostWithComments => {
                             console.log(`Retrieving single element By Id ${_id} was successful.\n`);
                             console.log(singlePostWithComments);
-                            res.render("renderSinglePost", { singlePostWithComments: singlePostWithComments })
+                            res.render(optionObj.renderName, { data: singlePostWithComments })
                           })
                           .catch(reject => {
                             console.log("GET SINGLE POST ERROR");
