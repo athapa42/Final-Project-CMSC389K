@@ -6,9 +6,19 @@
         <p class="card-text">Description: {{data.description}}</p>
         <a href={{data.linkUrl}}>URL: {{data.linkUrl}}</a>
         <img src="{{data.imageUrl}}" alt="">
-        <p> This URL is just for testing: /post/{{data.category}}?id={{data.id}}</p>
-        <p>Comments: {{data.reviews.length}}</p>
-        <a href="#" class="btn btn-primary">Read ...</a>
+        <p> This URL is just for testing: /post/{{data.category}}/{{data.id}}</p>
+        <br>
+        <h1>Comments: {{data.reviews.length}}</h1>
+        {{#each data.reviews}}
+        <div style="border: solid 2px black; margin-bottom: 10px; backgound-color: gray;">
+            <p>Date: {{this.timeStamp}}</p>
+            <p>UserName: {{this.userName}}</p>
+            <p>Comment: {{this.comment}}</p>
+            <p>Likes: {{this.likes}}</p>
+            <p>disLikes: {{this.disLikes}}</p>
+        </div>
+              
+        {{/each}}
 
 
 </ul>

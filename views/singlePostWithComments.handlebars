@@ -3,3 +3,9 @@
 <article>
     {{> renderSinglePost parameter=data }}
 </article>
+
+<form action="/post/{{data.category}}/{{data.id}}/addComment" method="POST">
+    UserName: <input type="text" name="userName">
+    comment:  <input type="text" name="comment"> 
+    <input type="submit" value="Add Comment">
+</form>

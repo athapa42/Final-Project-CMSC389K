@@ -62,7 +62,26 @@ function createPost(req, res) {
 };
 
 /*                 ******************* [ UPDATE ] *******************                 */
-
+function addComment(req, res){
+  let id = req.params.id;
+  let commentObj = req.body;
+  commentObj.timeStamp = new Date();
+  commentObj.likes = 0;
+  commentObj.disLikes = 0;
+  
+  Post.update(
+    { "_id": id},
+    {
+        $push: {
+          reviews: commentObj
+        }
+    }
+).then(result => {
+  console.log("Comment has been Added into DataBases.");
+}).catch(reject => {
+  console.log(`ERROR adding comment into DB. Error ${reject}`)
+})
+}
 function updatePost(req, res) {
   Post.findByIdAndUpdate(req.params.id, 
     { $set: req.body }, { new: true })
@@ -100,10 +119,11 @@ function deletePost(req, res) {
 * each of our endpoints under the routes folder to handle the incoming request
 */
 module.exports = {
-  getPostList: getPostList,
-  getSinglePost: getSinglePost,
-  createPost: createPost,
-  updatePost: updatePost,
-  deletePost: deletePost
+  getPostList   : getPostList,
+  getSinglePost : getSinglePost,
+  createPost    : createPost,
+  updatePost    : updatePost,
+  deletePost    : deletePost,
+  addComment    : addComment
 
 }
