@@ -1,4 +1,6 @@
+
 <h1>Testing: From renderSinglePost.handlebars</h1>
+
 <ul id="listOfPostId" class="list-group">
 
 
@@ -14,11 +16,29 @@
             <p>Date: {{this.timeStamp}}</p>
             <p>UserName: {{this.userName}}</p>
             <p>Comment: {{this.comment}}</p>
+            <div class="like_button">
+              <button>Like</button>
+              <span class="count">0</span>
+            </div>
+            <div class="dislike_button">
+              <button>Dislike</button>
+              <span class="count">0</span>
+            </div>
             <p>Likes: {{this.likes}}</p>
             <p>disLikes: {{this.disLikes}}</p>
         </div>
-              
+
         {{/each}}
 
 
 </ul>
+<script>
+$(".dislike_button button").on("click", function() {
+  var $count = $(this).parent().find('.count');
+  $count.html($count.html() * 1 + 1);
+});
+$(".like_button button").on("click", function() {
+  var $count = $(this).parent().find('.count');
+  $count.html($count.html() * 1 + 1);
+});
+</script>

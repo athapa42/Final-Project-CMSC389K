@@ -46,7 +46,7 @@ function getSinglePost(req, res, optionObj) {
 function createPost(req, res) {
 
   let postData = new Post(req.body);
-  postData["timeStamp"] = new Date(); 
+  postData["timeStamp"] = new Date();
   console.log(postData);
 
   Post.create(new Post(postData))
@@ -68,7 +68,7 @@ function addComment(req, res){
   commentObj.timeStamp = new Date();
   commentObj.likes = 0;
   commentObj.disLikes = 0;
-  
+
   Post.update(
     { "_id": id},
     {
@@ -82,8 +82,28 @@ function addComment(req, res){
   console.log(`ERROR adding comment into DB. Error ${reject}`)
 })
 }
+/*
+function updateLikesDislikes(req, res){
+  let id = req.params.id;
+  commentObj.likes = 0;
+  commentObj.disLikes = 0;
+
+  Post.update(
+    { "_id": id},
+    {
+        $push: {
+          reviews: commentObj
+        }
+    }
+).then(result => {
+  console.log("Comment has been Added into DataBases.");
+}).catch(reject => {
+  console.log(`ERROR adding comment into DB. Error ${reject}`)
+})
+}
+*/
 function updatePost(req, res) {
-  Post.findByIdAndUpdate(req.params.id, 
+  Post.findByIdAndUpdate(req.params.id,
     { $set: req.body }, { new: true })
                                     .then(result=> {
                                       console.log(`Updating has been successful for ${req.params.id} ID`);
@@ -100,7 +120,7 @@ function updatePost(req, res) {
 
 // Handle Post on DELETE.
 function deletePost(req, res) {
-  let _id = req.params.id 
+  let _id = req.params.id
   Post.findByIdAndDelete(_id)
                             .then(result => {
                               console.log(`Removing a post with ${_id} was successful.`)
@@ -115,7 +135,7 @@ function deletePost(req, res) {
 
 
 /*
-* The above functionaly are being exported, so that it could be used from 
+* The above functionaly are being exported, so that it could be used from
 * each of our endpoints under the routes folder to handle the incoming request
 */
 module.exports = {

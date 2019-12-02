@@ -8,7 +8,6 @@
     margin: 0px;
 
 }
-
 .itemList {
     background-color: white;
     border: solid 5px black;
@@ -24,11 +23,15 @@
     margin-left: 8%; */
     /* width: 50%; */
      /* border: solid 1px black;  */
-} 
+}
  .card-body {
      padding-top: 0px;
     /* border: solid 1px pink;  */
-} 
+}
+h1 {
+   -webkit-text-decoration-line: underline; /* Safari */
+   text-decoration-line: underline;
+}
 .card {
     background-color: white;
      /* border: solid 1px red;  */
@@ -42,4 +45,3 @@
     box-shadow         : 0 0 40px -12px rgba(0,0,0,0.75); /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 
   }
-  
