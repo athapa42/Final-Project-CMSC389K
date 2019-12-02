@@ -1,3 +1,4 @@
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for posts">
 <ul id="listOfPostId" class="list-group">
 
     {{#each data}}
@@ -24,3 +25,30 @@
     <hr>
     {{/each}}
 </ul>
+
+<script>
+
+function myFunction() {
+  // Declare variables
+  var input, filter, a, i, ul, li, txtValue
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("listOfPostId");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+
+  for (i=0; i<li.length; i++) {
+
+    console.log(li[i])
+    a = li[i].getElementsByClassName("card-title")[0];
+    console.log(a)
+   txtValue = a.textContent || a.innerText;
+   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+     li[i].style.display = "";
+   } else {
+     li[i].style.display = "none";
+      }
+  }
+}
+</script>
