@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var Handlebars = require('handlebars');
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 // exphbs.handlebars;
 
 // Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
