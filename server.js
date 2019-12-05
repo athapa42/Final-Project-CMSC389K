@@ -102,8 +102,7 @@ app.get('*', function(req, res){
     res.render("404",{url: req.url});
   });
 
- 
+app.listen(process.env.PORT || 3000, function() {
 
-app.listen(4000, function() {
     console.log('Example app listening on port 3000!');
 });
