@@ -1,5 +1,21 @@
-<h1>Event Post: </h1>
-<hr>
+ <style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
+
+    #chatPicture {
+        background-image: url('https://hub.umd.edu/sites/default/files/styles/umd_2560_1440/public/2018-10/image/3_remsberg_181012131194_1920x1080.JPG?itok=A-Bhy0Yw');
+    }
+
+</style>
+<div id="chatPicture" class="outer-div welcomingPic">
+    <div class="inner-div">
+            <input class="form-control text" id="myInput" type="text" onkeyup="myFunction()"
+                placeholder="Search posts by title..." aria-label="Search">
+    </div>
+</div>
 
 <article>
     {{> renderListOfPost parameter=data }}

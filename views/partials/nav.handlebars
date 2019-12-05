@@ -1,26 +1,43 @@
-<nav class="navbar navbar-inverse">
+<style>
+  nav {
+    margin: 0px;
+
+  }
+  nav>div>ul>li {
+    padding: 0px 15px 0px 15px;
+    /*border: white 1px solid;*/
+  }
+  nav>div>ul>li>a>i {
+    margin: 0px 10px 0px 0px;
+  
+  }
+    nav>div>ul>li:hover {
+      background-color: black;
+      color: white;
+  }
+
+</style>
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
   <div class="container-fluid">
-    {{!-- <div class="navbar-header">
-      <a class="navbar-brand" href="#">Professor Review</a>
-    </div> --}}
+  
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="/addPost">Add New Post</a></li>
-      <li><a href="/post/sport">Sport</a></li>
+      <li><a href="/"><i class="fas fa-home fa-lg"></i>Home</a></li>
+      <li><a href="/addPost"><i class="fas fa-plus fa-lg"></i>Add New Post</a></li>
+      <li><a href="/post/sport"><i class="fas fa-football-ball fa-lg"></i>Sport</a></li>
 
-      <li><a href="/post/academic">Academic</a></li>
-      <li><a href="/post/research">Research</a></li>
+      <li><a href="/post/academic"><i class="fas fa-chalkboard-teacher fa-lg"></i>Academic</a></li>
+      <li><a href="/post/research"><i class="fab fa-researchgate fa-lg"></i>Research</a></li>
 
-      <li><a href="/post/event">Event</a></li>
-      <li><a href="/post/career">Career</a></li>
-      <li><a href="/chat">chat</a></li>
-      <li><a href="/aboutUS">About</a></li>
-
+      <li><a href="/post/event"><i class="fas fa-calendar-plus fa-lg"></i>Event</a></li>
+      <li><a href="/post/career"><i class="fas fa-signal fa-lg"></i>Career</a></li>
+      <li><a href="/chat"><i class="fas fa-comments fa-lg"></i>chat</a></li>
+      <li><a href="/aboutUS"><i class="fas fa-address-card fa-lg"></i>About</a></li> 
     </ul>
-    {{!-- <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul> --}}
+  
   </div>
+  
 </nav>
-<hr>
+<script>
+
+
+</script>

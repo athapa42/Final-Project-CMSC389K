@@ -3,7 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
-var handlebars = exphbs.handlebars;
+var Handlebars = require('handlebars');
+// exphbs.handlebars;
 
 // Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
 var dotenv = require('dotenv');
@@ -76,6 +77,15 @@ response.redirect(`/post/${userCategory}/${_id}`)
 //next();
 })
 
+ /* Handlebars helper function */
+Handlebars.registerHelper('calculateTheAmountTimeSincePostOut', function (timeStamp) {
+  var semester = "" + timeStamp + "";
+  
+  return new Handlebars.SafeString(
+    "" + semester + ""
+  );
+})
+
 app.use('/', indexRouter);
 app.use('/aboutUs', aboutUsRouter);
 app.use('/post/academic', academicRouter);
@@ -91,6 +101,9 @@ app.use('/post/sport', sportRouter);
 app.get('*', function(req, res){
     res.render("404",{url: req.url});
   });
-app.listen(3000, function() {
+
+ 
+
+app.listen(4000, function() {
     console.log('Example app listening on port 3000!');
 });

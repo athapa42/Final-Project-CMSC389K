@@ -1,14 +1,21 @@
-<h1>Welcome to UMD Redit</h1>
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
 
-<div class="input-group">
-    <input id="searchByTitle" type="text" class="form-control" placeholder="Search" name="search">
-    <div class="input-group-btn">
-        <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-        </button>
+    #homePicture {
+        background-image: url('https://studentaffairs.umd.edu/sites/studentaffairs.umd.edu/files/microsite-hero/arialmcircle_0_0.jpg');
+    }
+
+</style>
+<div id="homePicture" class="outer-div welcomingPic">
+    <div class="inner-div">
+            <input class="form-control text" id="myInput" type="text" onkeyup="myFunction()"
+                placeholder="Search posts by title..." aria-label="Search">
     </div>
 </div>
-<br>
 
 <article class="bodyForArticle">
     {{> renderListOfPost parameter=data }}

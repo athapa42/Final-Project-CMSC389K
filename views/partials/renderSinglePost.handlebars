@@ -36,6 +36,7 @@
 $(".dislike_button button").on("click", function() {
   var $count = $(this).parent().find('.count');
   $count.html($count.html() * 1 + 1);
+  $(this).hide()
 });
 $(".like_button button").on("click", function() {
   var $count = $(this).parent().find('.count');
