@@ -1,45 +1,55 @@
 
-<h1>Testing: From renderSinglePost.handlebars</h1>
+<li class="li-container list-group-item" style="border: 0 none; border: 1px solid green;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-body">
+
+           <p class="card-text"> {{calculateTheAmountTimeSincePostOut data.timeStamp}} - ago</p>
+          <h5 class="card-title">Title: {{data.title}}</h5>
+          <p class="card-text">Description: {{data.description}}</p>
+          <a href={{data.linkUrl}}>URL: {{data.linkUrl}}</a>
+          <img src="{{data.imageUrl}}" alt="">
+          <p class="card-text"> This URL is just for testing: /post/{{data.category}}/{{data.id}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
 
 <ul id="listOfPostId" class="list-group">
+    <h1>Comments: {{data.reviews.length}}</h1>
 
+  {{#each data.reviews}}
+  <div style="border: solid 2px black; margin-bottom: 10px; backgound-color: gray;">
+    <p>Date: {{this.timeStamp}}</p>
+    <p>UserName: {{this.userName}}</p>
+    <p>Comment: {{this.comment}}</p>
+    <div class="like_button">
+      <button>Like</button>
+      <span class="count">0</span>
+    </div>
+    <div class="dislike_button">
+      <button>Dislike</button>
+      <span class="count">0</span>
+    </div>
+    <p>Likes: {{this.likes}}</p>
+    <p>disLikes: {{this.disLikes}}</p>
+  </div>
 
-    <h5 class="card-title">Title: {{data.title}}</h5>
-        <p class="card-text">Description: {{data.description}}</p>
-        <a href={{data.linkUrl}}>URL: {{data.linkUrl}}</a>
-        <img src="{{data.imageUrl}}" alt="">
-        <p> This URL is just for testing: /post/{{data.category}}/{{data.id}}</p>
-        <br>
-        <h1>Comments: {{data.reviews.length}}</h1>
-        {{#each data.reviews}}
-        <div style="border: solid 2px black; margin-bottom: 10px; backgound-color: gray;">
-            <p>Date: {{this.timeStamp}}</p>
-            <p>UserName: {{this.userName}}</p>
-            <p>Comment: {{this.comment}}</p>
-            <div class="like_button">
-              <button>Like</button>
-              <span class="count">0</span>
-            </div>
-            <div class="dislike_button">
-              <button>Dislike</button>
-              <span class="count">0</span>
-            </div>
-            <p>Likes: {{this.likes}}</p>
-            <p>disLikes: {{this.disLikes}}</p>
-        </div>
-
-        {{/each}}
+  {{/each}}
 
 
 </ul>
 <script>
-$(".dislike_button button").on("click", function() {
-  var $count = $(this).parent().find('.count');
-  $count.html($count.html() * 1 + 1);
-  $(this).hide()
-});
-$(".like_button button").on("click", function() {
-  var $count = $(this).parent().find('.count');
-  $count.html($count.html() * 1 + 1);
-});
+  $(".dislike_button button").on("click", function () {
+    var $count = $(this).parent().find('.count');
+    $count.html($count.html() * 1 + 1);
+    $(this).hide()
+  });
+  $(".like_button button").on("click", function () {
+    var $count = $(this).parent().find('.count');
+    $count.html($count.html() * 1 + 1);
+  });
 </script>

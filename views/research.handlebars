@@ -1,5 +1,23 @@
-<h1>Research Post: </h1>
-<hr>
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
+
+    #researchPicture {
+        background-image: url('https://1.bp.blogspot.com/-VMDz_La_5Uo/Wg04FXpkGrI/AAAAAAAA7KE/l-oE5bDu0mIEPNP-PMQEU0Q3MlE1awUnQCLcBGAs/s1600/r.PNG');
+    }
+
+</style>
+<div id="researchPicture" class="outer-div welcomingPic">
+    <div class="inner-div">
+            <input class="form-control text" id="myInput" type="text" onkeyup="myFunction()"
+                placeholder="Search posts by title..." aria-label="Search">
+    </div>
+</div>
+
+
 
 <article>
     {{> renderListOfPost parameter=data }}

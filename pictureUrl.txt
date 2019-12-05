@@ -1,6 +1,8 @@
 Home:
 https://studentaffairs.umd.edu/sites/studentaffairs.umd.edu/files/microsite-hero/arialmcircle_0_0.jpg
 
+Academic: https://pbs.twimg.com/media/D4hnWoTXoAAvSIN.jpg
+
 Sport: https://umterps.com/common/controls/image_handler.aspx?thumb_id=0&image_path=/images/2018/6/7/IORECYPNBHFKLII_20150429202359.jpg  
 
 Career: https://akm-img-a-in.tosshub.com/indiatoday/images/story/201807/career_main.jpeg?haGMfHxXB4sapE5qJMNPhK8OMwjN.dtT
@@ -8,6 +10,7 @@ Career: https://akm-img-a-in.tosshub.com/indiatoday/images/story/201807/career_m
 Chat: http://www.nflc.org/sites/default/files/inline-images/TerpsTalkLogo.png
 
 Research:  https://1.bp.blogspot.com/-VMDz_La_5Uo/Wg04FXpkGrI/AAAAAAAA7KE/l-oE5bDu0mIEPNP-PMQEU0Q3MlE1awUnQCLcBGAs/s1600/r.PNG
+
 chat: http://www.nflc.org/sites/default/files/inline-images/TerpsTalkLogo.png
 
 Event: https://hub.umd.edu/sites/default/files/styles/umd_2560_1440/public/2018-10/image/3_remsberg_181012131194_1920x1080.JPG?itok=A-Bhy0Yw

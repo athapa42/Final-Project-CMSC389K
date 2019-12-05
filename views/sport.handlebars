@@ -1,14 +1,22 @@
-<h1>
-    Sport Post:
-</h1>
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
 
-<h4>
-    Post should appear recently added to Old.
-</h4>
-<h4>
-    Sort article or post by type of sport [Soccer, fooBall, baseBall, Running]
-</h4>
-<hr>
+    #sportPicture {
+        background-image: url('https://umterps.com/common/controls/image_handler.aspx?thumb_id=0&image_path=/images/2018/6/7/IORECYPNBHFKLII_20150429202359.jpg ');
+    }
+
+</style>
+<div id="sportPicture" class="outer-div welcomingPic">
+    <div class="inner-div">
+            <input class="form-control text" id="myInput" type="text" onkeyup="myFunction()"
+                placeholder="Search posts by title..." aria-label="Search">
+    </div>
+</div>
+
 
 <article>
     {{> renderListOfPost parameter=data }}
