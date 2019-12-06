@@ -1,60 +1,62 @@
 
-# Local Dogs for Adoption
+# Reddit for people affiliated with UMD
 
 ---
 
-Name: Sashank Thupukari
+Name: Nahom Tesfatsion, Aavash Thapa
 
-Date: April 2nd, 2017
+Date: December 6, 2019
 
-Project Topic: Local Dogs for Adoption
+Project Topic: Reddit for people affiliated with UMD
 
-URL: http://103.283.293.13:3000/
+URL: umdreddit.herokuapp.com
  ---
 
 ### 1. Data Format and Storage
 
 Data point fields:
-- `Field 1`: Name               `Type: String`
-- `Field 2`: Breed              `Type: String`
-- `Field 3`: Weight             `Type: Number`
-- `Field 4`: Age                `Type: Number`
-- `Field 5`: Characteristics    `Type: [String]`
+- `Field 1`: Category           `Type: String`
+- `Field 2`: Title              `Type: String`
+- `Field 3`: Description        `Type: String`
+- `Field 4`: Link               `Type: URL`
+- `Field 5`: Image              `Type: URL`
+- `Field 6`: Name               `Type: String`
 
-Schema: 
+Schema:
 ```javascript
 {
-    name: String,
-    breed: String,
-    weight: Number, 
-    age: Number,
-    characteristics: [String]
+    category: String,
+    title: String,
+    description: Number,
+    link: URL,
+    image: URL,
+    name: String
 }
 ```
 
 ### 2. Add New Data
 
-HTML form route: `/addDog`
+HTML form route: `/addPost`
 
-POST endpoint route: `/api/addDog`
 
-Example Node.js POST request to endpoint: 
+Example Node.js POST request to endpoint:
 ```javascript
 var request = require("request");
 
-var options = { 
+var options = {
     method: 'POST',
-    url: 'http://localhost:3000/api/addDog',
-    headers: { 
-        'content-type': 'application/x-www-form-urlencoded' 
+    url: 'http://localhost:3000/addPost',
+    headers: {
+        'content-type': 'application/x-www-form-urlencoded'
     },
-    form: { 
-        name: 'Cupcake', 
-        breed: 'German Shepherd',
-        image: "http://i.imgur.com/iGLcfkN.jpg",
-        age: 6
-        characteristics: ["Brown", "Black", "Sleepy", "Lazy"]
-    } 
+    form: {
+        category: 'Sport',
+        breed: 'UMD Football sucks',
+        description: "UMD football will always dissapoint"
+        link: "https://www.baltimoresun.com/sports/terps/bs-sp-maryland-football-takeaways-nebraska-20191124-yehy2bg4djaodppllpi2pwexde-story.html"
+        image: "https://www.washingtonpost.com/resizer/iHTDE5g1mC4unsd3IrxYWsJIAeI=/767x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MU7WEQWXFMI6TCJEDW35VR4X7M.jpg",
+        name: Ron Howard
+    }
 };
 
 request(options, function (error, response, body) {
@@ -64,13 +66,10 @@ request(options, function (error, response, body) {
 });
 ```
 
-### 3. View Data
-
-GET endpoint route: `/api/...`
 
 ### 4. Search Data
 
-Search Field: `name`
+Search Field: `title`
 
 ### 5. Navigation Pages
 
