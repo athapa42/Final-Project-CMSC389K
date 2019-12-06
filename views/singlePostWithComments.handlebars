@@ -1,6 +1,21 @@
 <style>
+    body{
+        background-color: black;
+    }
+    .parent-div {
+        position: relative;
+      
+        margin: 10px;
+    } 
+    .child-div {
+    
+        background-color: white;
+        position: absolute; 
+        left: 10%; 
+        top: 25%;         
+    }
     .commentingForm {
-        border: 2px solid Green;
+      
         font-family: 'Roboto', sans-serif;
         color: #fff;
         color: #000;
@@ -10,41 +25,32 @@
         border-radius: 3px;
         border-bottom: 4px solid #5e95cd;
         box-shadow: 0px 0px 30px #888888;
-    }
+        
 
-  
+    }
 </style>
 
-<article style="border: 2px solid Red;">
+<article style="background-color: black;">
     {{> renderSinglePost parameter=data }}
 </article>
 
-{{!-- <div class="container commentingForm">
-    <div class="row"> --}}
-        <div class="col-md-7 commentingForm">
-            <form action="/post/{{data.category}}/{{data.id}}/addComment" method="POST">
-                <div>
-                    UserName: <input type="text" name="userName">
-                </div>
-                <div>
-                    <p>
-                        Comment: <textarea rows="5" style="width:100%" name="comment"></textarea>
-                    </p>
-                    <p>
-                        {{!-- <i class="fas fa-thumbs-up"></i> --}}
-                        {{!-- <a href="#" id="like"><i class="far fa-thumbs-up fa-lg"></i></a>
-                        {{!-- <i class="fas fa-thumbs-down"></i> --}}
-                        <a href="#" id="dislike"><i class="far fa-thumbs-down fa-lg"></i></a> --}}
 
-                        <label><input type="radio" name="like" id="like-rate" value=1> like</label>
-                        <label><input type="radio" name="disLike" id="disLike-rate" value=1> dislike</label><br>
-                    </p>
-                    <p>
-                        <input class="btn btn-large btn-primary pull-right" type="submit" id="posting"
-                            value="Add Comment" />
-                    </p>
-                </div>
-            </form>
-        </div>
+<div class="container commentContainer parent-div" style="background-color: black;">
+    
+    <div class="col-md-10 commentingForm child-div">
+        <h2 style="text-align: center;">Add Comment</h2>
+        <form action="/post/{{data.category}}/{{data.id}}/addComment" method="POST">
+            <div> UserName: <input type="text" name="userName"></div>
+            <div>
+                <p>Comment: <textarea rows="5" style="width:100%" name="comment"></textarea></p>
+                <p>
+                    <label><input type="radio" name="like-DisLike" id="like-rate" value=1> <i class="far fa-thumbs-up fa-lg"></i> </label>
+                    <label><input type="radio" name="like-DisLike" id="disLike-rate" value=0> <i class="far fa-thumbs-down fa-lg"></i> </label><br>
+                </p>
+                <p><input class="btn btn-large btn-primary pull-right" type="submit" id="posting" value="Add Comment"/></p>
+            </div>
+        </form>
+
     </div>
 </div>
+

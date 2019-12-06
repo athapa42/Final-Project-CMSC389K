@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var Handlebars = require('handlebars');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var moment = require('moment');
 // exphbs.handlebars;
 
 // Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
@@ -26,6 +27,9 @@ dotenv.config();
 
 // Connect to MongoDB
 console.log(process.env.MONGODB)
+// Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
+// by default, you need to set it to false.
+mongoose.set('useFindAndModify', false);
 mongoose.connect(process.env.MONGODB);
 mongoose.connection.on('error', function() {
     console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
@@ -82,10 +86,20 @@ response.redirect(`/post/${userCategory}/${_id}`)
 
  /* Handlebars helper function */
 Handlebars.registerHelper('calculateTheAmountTimeSincePostOut', function (timeStamp) {
-  var semester = "" + timeStamp + "";
+    var result = "";
+    var y = timeStamp.getFullYear();
+    var m = timeStamp.getMonth() + 1;
+    var d = timeStamp.getDate();
+    var mm = m < 10 ? '0' + m : m;
+    var dd = d < 10 ? '0' + d : d;
+    result = '' + y + mm + dd;
   
+  var returnResult = moment(result, "YYYYMMDD").fromNow();
+
+  // console.log("returnResultreturnResultreturnResultreturnResult");
+  // console.log(returnResult);
   return new Handlebars.SafeString(
-    "" + semester + ""
+    "" + returnResult + ""
   );
 })
 
