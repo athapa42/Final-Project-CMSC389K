@@ -91,7 +91,7 @@ function populateDB(optionObj) {
             
             if (j % 5 !== 0) {
                 l = 1;
-                date = faker.date.between('2015-01-01', new Date());
+                date = faker.date.between(optionObj.dateFrom, optionObj.dateTo);
             }
             else {
                 d = 1;
@@ -125,7 +125,9 @@ function populateDB(optionObj) {
 }
 // Runing the function.
 var optionObjToPass = {
-    numberOfPost: 100
+    numberOfPost : 10,
+    dateFrom     : '2019-12-06',
+    dateTo       : new Date()
 }
 let newPosts = populateDB(optionObjToPass)
 
