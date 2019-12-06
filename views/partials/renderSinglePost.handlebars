@@ -6,9 +6,9 @@
         <p class="card-text">({{data.userName}}) {{calculateTheAmountTimeSincePostOut data.timeStamp}}</p>
         <h5 class="card-title">Title: {{data.title}}</h5>
         <p class="card-text">Description: {{data.description}}</p>
-        <a href="{{data.linkUrl}}">{{data.linkUrl}}</a>
-        <img src="{{data.imageUrl}}" alt="Post Image">
-        <p class="card-text"> This URL is just for testing: /post/{{data.category}}/{{data.id}}</p>
+       <p><a href="{{data.linkUrl}}">{{data.linkUrl}}</a></p> 
+       <p><img src="{{data.imageUrl}}" alt="Post Image"></p> 
+        {{!-- <p class="card-text"> This URL is just for testing: /post/{{data.category}}/{{data.id}}</p> --}}
         <p class="card-text"> {{data.like}} <i class="far fa-thumbs-up fa-lg"></i> {{data.disLike}} <i
             class="far fa-thumbs-down fa-lg"></i> <span style="float: right">{{data.reviews.length}} Comments</span></p>
       </div>
@@ -16,7 +16,7 @@
       <ul id="listOfPostId" class="list-group" style="background-color: lightGray;">
         <h1>Comments: {{data.reviews.length}}</h1>
         {{#each data.reviews}}
-          <div style="margin-bottom: 10px; margin-left: 10%; background-color: gray;">
+          <div style="margin-bottom: 10px; margin-left: 10%; background-color: gray; padding: 10px;">
             <p class="card-text"> {{calculateTheAmountTimeSincePostOut this.timeStamp}}</p>
             <p>UserName: {{this.userName}}</p>
             <p>Comment: {{this.comment}}</p>
