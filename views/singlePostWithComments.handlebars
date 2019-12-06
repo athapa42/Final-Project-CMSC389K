@@ -32,9 +32,12 @@
                     </p>
                     <p>
                         {{!-- <i class="fas fa-thumbs-up"></i> --}}
-                        <button id="like"><i class="far fa-thumbs-up fa-lg"></i></button>
+                        {{!-- <a href="#" id="like"><i class="far fa-thumbs-up fa-lg"></i></a>
                         {{!-- <i class="fas fa-thumbs-down"></i> --}}
-                        <button id="dislike"><i class="far fa-thumbs-down"></i></button>
+                        <a href="#" id="dislike"><i class="far fa-thumbs-down fa-lg"></i></a> --}}
+
+                        <label><input type="radio" name="like" id="like-rate" value=1> like</label>
+                        <label><input type="radio" name="disLike" id="disLike-rate" value=1> dislike</label><br>
                     </p>
                     <p>
                         <input class="btn btn-large btn-primary pull-right" type="submit" id="posting"

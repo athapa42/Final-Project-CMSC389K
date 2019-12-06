@@ -1,43 +1,63 @@
 <style>
-  nav {
+  #rr {
     margin: 0px;
-
   }
-  nav>div>ul>li {
-    padding: 0px 15px 0px 15px;
+
+  #websiteName {
+    color: Red;
+  }
+
+  #myNavbar>ul>li {
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
     /*border: white 1px solid;*/
   }
-  nav>div>ul>li>a>i {
-    margin: 0px 10px 0px 0px;
-  
-  }
-    nav>div>ul>li:hover {
-      background-color: black;
-      color: white;
+
+  #myNavbar>ul>li>a>i {
+    margin: 0px 5px 0px 0px;
+
   }
 
+  #myNavbar>ul>li:hover {
+    background-color: black;
+    color: white;
+  }
 </style>
-<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+<nav id="rr" class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0px;">
   <div class="container-fluid">
-  
-    <ul class="nav navbar-nav">
-      <li><a href="/"><i class="fas fa-home fa-lg"></i>Home</a></li>
-      <li><a href="/addPost"><i class="fas fa-plus fa-lg"></i>Add New Post</a></li>
-      <li><a href="/post/sport"><i class="fas fa-football-ball fa-lg"></i>Sport</a></li>
 
-      <li><a href="/post/academic"><i class="fas fa-chalkboard-teacher fa-lg"></i>Academic</a></li>
-      <li><a href="/post/research"><i class="fab fa-researchgate fa-lg"></i>Research</a></li>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><span id="websiteName"><i class="fas fa-home fa-lg"></i>UMD-Reddit</span></a>
+    </div>
 
-      <li><a href="/post/event"><i class="fas fa-calendar-plus fa-lg"></i>Event</a></li>
-      <li><a href="/post/career"><i class="fas fa-signal fa-lg"></i>Career</a></li>
-      <li><a href="/chat"><i class="fas fa-comments fa-lg"></i>chat</a></li>
-      <li><a href="/aboutUS"><i class="fas fa-address-card fa-lg"></i>About</a></li> 
-    </ul>
-  
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        {{!-- <li><a href="/"><i class="fas fa-home fa-lg"></i>Home</a></li> --}}
+        <li><a href="/addPost"><i class="fas fa-plus fa-lg"></i>Add New Post</a></li>
+        <li><a href="/post/sport"><i class="fas fa-football-ball fa-lg"></i>Sport</a></li>
+
+        <li><a href="/post/academic"><i class="fas fa-chalkboard-teacher fa-lg"></i>Academic</a></li>
+        <li><a href="/post/research"><i class="fab fa-researchgate fa-lg"></i>Research</a></li>
+
+        <li><a href="/post/event"><i class="fas fa-calendar-plus fa-lg"></i>Event</a></li>
+        <li><a href="/post/career"><i class="fas fa-signal fa-lg"></i>Career</a></li>
+        <li><a href="/chat"><i class="fas fa-comments fa-lg"></i>chat</a></li>
+        <li><a href="/aboutUS"><i class="fas fa-address-card fa-lg"></i>About</a></li>
+      </ul>
+
+
+      <div class="navbar-form navbar-left input-group">
+        <input class="form-control" id="myInput" type="text" onkeyup="myFunction()" placeholder="Search">
+      </div>
+
+
+    </div>
+
   </div>
-  
+
 </nav>
-<script>
-
-
-</script>

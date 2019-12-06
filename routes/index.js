@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var postController = require('../controllers/postController');
+var crudController = require('../controllers/crudController');
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  postController.getPostList(req, res, {filterBy : {}, renderName: "home"});
+  crudController.getPostList(req, res, {filterBy : {}, renderName: "home"});
 });
 
 module.exports = router;

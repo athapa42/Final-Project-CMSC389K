@@ -11,7 +11,8 @@
           <a href={{data.linkUrl}}>URL: {{data.linkUrl}}</a>
           <img src="{{data.imageUrl}}" alt="">
           <p class="card-text"> This URL is just for testing: /post/{{data.category}}/{{data.id}}</p>
-
+          <p class="card-text"> Like: ({{data.like}}) #</p>   
+           <p class="card-text"> DisLike: ({{data.disLike}}) #</p>  
         </div>
       </div>
     </div>
@@ -26,7 +27,9 @@
     <p>Date: {{this.timeStamp}}</p>
     <p>UserName: {{this.userName}}</p>
     <p>Comment: {{this.comment}}</p>
-    <div class="like_button">
+    <p class="card-text"> Like: ({{this.like}}) #</p>   
+    <p class="card-text"> DisLike: ({{this.disLike}}) #</p>  
+    {{!-- <div class="like_button">
       <button>Like</button>
       <span class="count">0</span>
     </div>
@@ -35,7 +38,7 @@
       <span class="count">0</span>
     </div>
     <p>Likes: {{this.likes}}</p>
-    <p>disLikes: {{this.disLikes}}</p>
+    <p>disLikes: {{this.disLikes}}</p> --}}
   </div>
 
   {{/each}}

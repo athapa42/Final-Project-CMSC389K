@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var postController = require("../controllers/postController");
+var crudController = require("../controllers/crudController");
 
 // router.get('/', function(req, res, next) {
 //   console.log(`This is url ${req.url}`);
@@ -8,7 +8,7 @@ var postController = require("../controllers/postController");
 //     filterBy   : { category : "academic" },
 //     renderName : "academic"
 //   }
-// postController.getPostList(req, res, optionObj);
+// crudController.getPostList(req, res, optionObj);
 // });
 
 

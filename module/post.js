@@ -13,9 +13,9 @@ var reviewSchema = new mongoose.Schema({
 
     comment:     { type: String },
 
-    likes:       { type: Number },
+    like:       { type: Number },
     
-    disLikes:    { type: Number }
+    disLike:    { type: Number }
 });
 
 var postSchema = new mongoose.Schema({
@@ -27,11 +27,15 @@ var postSchema = new mongoose.Schema({
 
     title:       { type: String, required: true },
 
-    imageUrl:    { type: String},
+    imageUrl:    { type: String },
 
-    description: { type: String, required: true},
+    description: { type: String, required: true },
 
     linkUrl:     { type: String },
+
+    like:        { type: Number },
+
+    disLike:     { type: Number },
 
     reviews: [reviewSchema] 
 });

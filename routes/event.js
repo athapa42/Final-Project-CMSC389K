@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
                 filterBy   : { category : "event" },
                 renderName : "event"
               }
-  postController.getPostList(req, res, optionObj);
+  crudController.getPostList(req, res, optionObj);
 });
 
 module.exports = router;

@@ -42,7 +42,7 @@ var addPostRouter = require('./routes/addPost');
 var researchRouter = require('./routes/research');
 var eventRouter = require('./routes/event');
 var sportRouter = require('./routes/sport');
-var postController = require("./controllers/postController");
+var crudController = require("./controllers/crudController");
 
 app.get("/post/:category", (request, response, next) => {
   let userCategory = request.params.category;
@@ -51,10 +51,10 @@ app.get("/post/:category", (request, response, next) => {
     filterBy   : { category : userCategory },
     renderName : userCategory
   }
-postController.getPostList(request, response, optionObj);
+crudController.getPostList(request, response, optionObj);
 //next();
 })
-app.get("/post/:category/:id", (request, response, next) => {
+app.get("/post/:category/:id", (request, response) => {
   // let userCategory = request.params.category;
   // let _id = request.params.id;
 
@@ -62,18 +62,19 @@ app.get("/post/:category/:id", (request, response, next) => {
   let optionObj = {
       renderName : "singlePostWithComments"
   }
-postController.getSinglePost(request, response, optionObj);
-//next();
+crudController.getSinglePost(request, response, optionObj);
+
 })
 app.post("/post/:category/:id/addComment", (request, response, next) => {
   let userCategory = request.params.category;
   let _id = request.params.id;
+  console.log(request.body)
 
   console.log(`This is the url ${request.url}`);
   let optionObj = {
       renderName : "singlePostWithComments"
   }
-postController.addComment(request, response);
+crudController.addComment(request, response);
 
 response.redirect(`/post/${userCategory}/${_id}`)
 //next();

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
-var postController = require('../controllers/postController');
+var crudController = require('../controllers/crudController');
 //var dataUtil = require("../post-util");
 //var _DATA = dataUtil.loadData().posts;
 //var len = _DATA.length
@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('addPost');
 });
 
-router.post('/', postController.createPost);
+router.post('/', crudController.createPost);
 
 
 
