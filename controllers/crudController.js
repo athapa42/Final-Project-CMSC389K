@@ -68,25 +68,27 @@ function createPost(req, res) {
 function addComment(req, res){
   //let id = req.params.id;
   let id = mongoose.Types.ObjectId(req.params.id);
-  if(mongoose.Types.ObjectId.isValid(id)) {
+  /*if(mongoose.Types.ObjectId.isValid(id)) {
     console.log(`mongooseDBBBBB ${id} is valid mongodb ID`);
   }else {console.log(`mongooseDBBBBB ERROR ${id} is Invalid mongodb ID`);}
   console.log("add-commentid")
 
-  console.log(id);
+  console.log(id);*/
   let commentObj = req.body;
   // if(document.getElementById('like-rate').checked) {
   //   alert("like checked")
   // }else if(document.getElementById('disLike-rate').checked) {
-  //   alert("dislike checked")  }
+  //   alert("disLike checked")  }
   var like = 0;
   var disLike = 0;
-  if (req.body.like){
-    console.log("Like selected");
+  var likeDisLike = parseInt(req.body["like-DisLike"]);
+  console.log(`wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww ${req.body["like-DisLike"]} ${typeof req.body["like-DisLike"]}`)
+  if (likeDisLike === 1){
+    // console.log("Like selected");
     like = 1;
   }
-  if (req.body.disLike){
-    console.log("DisLike selected");
+  if (likeDisLike === 0){
+    // console.log("DisLike selected");
     disLike = 1;
   }
 
@@ -113,15 +115,17 @@ function addComment(req, res){
 
 }
 
-function updateLikeAndDislike(id, like, dislike, req, res){
+function updateLikeAndDislike(id, like, disLike, req, res){
 
   Post.findById(id)
   .then(singlePostWithComments => {
-    console.log(`ADD Comment: Retrieving single element By Id ${_id} was successful.\n`);
+    console.log(`ADD Comment: Retrieving single element By Id ${id} was successful.\n`);
+    console.log(`like: ${like}, typeof ${typeof like} disLike: ${disLike}, typeof ${typeof disLike}`)
     singlePostWithComments.like += like;
-    if (singlePostWithComments.disLike !== 0){
-      singlePostWithComments.disLike -= dislike;
-    }
+    singlePostWithComments.disLike += disLike;
+    
+    console.log(`singlePostWithComments.like ${singlePostWithComments.like}`);
+    console.log(`singlePostWithComments.disLike ${singlePostWithComments.disLike}`);
    
     Post.findByIdAndUpdate(id,
       { $set: singlePostWithComments}, { new: true })
