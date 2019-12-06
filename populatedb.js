@@ -97,9 +97,9 @@ function populateDB(optionObj) {
                 d = 1;
             }
             let aComment = {
-                userName: faker.internet.userName,
+                userName: faker.internet.userName(),
                 timeStamp: date,
-                comment: "GOOD GOOD GOOD GOOD GOOD GOOD GOOD GOOD GOOD GOOD GOOD GOOD ",
+                comment: faker.lorem.paragraph(),
                 like: l,
                 disLike: d
             }
