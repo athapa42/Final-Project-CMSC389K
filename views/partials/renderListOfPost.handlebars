@@ -12,11 +12,9 @@
                                 <p class="card-text"> {{calculateTheAmountTimeSincePostOut this.timeStamp}}</p>
                                 <h5 class="card-title postTitle">Title: {{this.title}}</h5>
                                 <p class="card-text">Description: {{this.description}}</p>
-                                <p class="card-text"> This URL is just for testing: /post/{{this.category}}/{{this.id}}</p>
-                                 <p class="card-text"> Like: ({{this.like}}) #</p>   
-                                 <p class="card-text"> DisLike: ({{this.disLike}}) #</p>                    
-                           
-                            </div>
+                                {{!-- <p class="card-text"> This URL is just for testing: /post/{{this.category}}/{{this.id}}</p> --}}
+                                <p class="card-text"> {{this.like}} <i class="far fa-thumbs-up fa-lg"></i> {{this.disLike}} <i class="far fa-thumbs-down fa-lg"></i> <span style="float: right">{{this.reviews.length}} Comments</span></p>   
+                           </div>
                         </a>
                     {{!-- </div> --}}
                 </div>
